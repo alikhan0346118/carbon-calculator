@@ -4,12 +4,7 @@ import scope2 from "../../public/animation_02.gif"
 import scope1 from "../../public/animation.gif"
 import Image from "next/image"
 const Services: React.FC = () => {
-  console.log("Services component is rendering")
 
-  // const handleClick = (): void => {
-  //   console.log("Button was clicked!")
-  //   alert("Hello World!")
-  // }
 
   return (
     <div className="bg-white min-h-[85dvh] w-full ">
@@ -18,7 +13,6 @@ const Services: React.FC = () => {
         <Image src={scope3} alt="Carbon" className="mt-12 ml-3 h-32 w-auto rounded-lg bg-gray-50"/>
         <button
           type="button"
-          // onClick={handleClick}
           className="text-xl mb-2 mt-20 rounded-xl font-bold"
         >
          

@@ -109,7 +109,7 @@ function CarbonFootprintCalculator() {
       });
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Handle error state
+
     }
   };
 

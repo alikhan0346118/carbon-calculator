@@ -55,7 +55,6 @@ export async function POST(request: Request) {
   }
 }
 
-// Handle preflight request (CORS)
 export async function OPTIONS() {
   const response = new NextResponse(null, { status: 204 })
   response.headers.set("Access-Control-Allow-Origin", "*")

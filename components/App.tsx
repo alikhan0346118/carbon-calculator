@@ -7,7 +7,6 @@ import graph from "../public/graph.gif"
 export default function Home() {
   return (
     <div className="bg-white w-full ">
-      {/* First Section with Slide-In Animation */}
       <motion.div
         className="flex flex-row justify-between bg-white h-[520px]  overflow-hidden"
         initial={{ x: "-100vw", opacity: 0 }}
@@ -56,7 +55,7 @@ export default function Home() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          <Image className="mt-32 h-[350px] w-[750px]" alt="forest" src={BG} />
+          <Image className="mt-32 h-1/2 w-full" alt="forest" src={BG} />
         </motion.div>
       </motion.div>
       <motion.div
@@ -66,14 +65,7 @@ export default function Home() {
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.2 }}
       >
-        {/* <motion.h1
-          className="text-3xl font-bold mb-3 px-5 flex-col"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          What is Net Zero?
-        </motion.h1> */}
+
 
         <motion.p
           className="px-5 text-justify text-lg leading-relaxed w-1/3 mt-6"

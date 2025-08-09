@@ -151,7 +151,7 @@ export default function Home() {
           >
             <source src="/video.mp4" type="video/mp4" />
             {/* Fallback to gif if video doesn't load */}
-            <img src="/bg.gif" alt="Sustainability background" className="w-full h-full object-cover object-center" />
+          
           </video>
         </div>
 

@@ -6,29 +6,107 @@ import Decarbonize from "../../public/netzero-logo-big-tree.png"
 
 const Future = () => {
   return (
-    <div>
-        <div className="flex bg-white flex-row gap-6 min-h-[85dvh] max-w-full">
-   <div className=" hover:bg-cyan-700 cursor-pointer hover:text-white bg-gray-50 text-black transition-transform duration-20 hover:scale-105  p-5 text-center ml-44 mt-32 w-48 h-[360px] rounded-lg">
-    <Image className="rounded-full ml-3 mt-4 mb-8 h-32 w-32" src={Consult} alt="Consultation" />
-    <h1 className="font-bold text-lg mt-4">Consult Now</h1>
-    <p className="text-center">Meet our experts to begin sustainability and ESG compliance jorney.</p>
-   </div>
-   <div className="hover:bg-cyan-700 cursor-pointer hover:text-white bg-gray-50 text-black transition-transform duration-20 hover:scale-105  p-5 text-center mt-32 w-48 h-[360px] rounded-lg">
-    <Image className="bg-gray-50 rounded-full ml-3 mt-4 mb-8 h-32 w-32" src={Goal} alt="Consultation" />
-    <h1 className="font-bold text-lg mt-6">Set your Goals</h1>
-    <p className="text-center">Our team guides in understanding and achieving your business roles</p>
-   </div>
-   <div className="hover:bg-cyan-700 cursor-pointer hover:text-white bg-gray-50 text-black transition-transform duration-20 hover:scale-105  p-5 text-center  mt-32 w-48 h-[360px] rounded-lg">
-    <Image className="ml-4 w-32 h-32 mt-4 rounded-full mb-8" src={Update} alt="Consultation" />
-    <h1 className="font-bold text-lg mt-4">Update Data</h1>
-    <p className="text-center">We interpret and organize data to ensure accuraccy and transparency</p>
-   </div>
-   <div className="hover:bg-cyan-700 cursor-pointer hover:text-white bg-gray-50 text-black transition-transform duration-20 hover:scale-105  p-5 text-center mt-32 w-48 h-[360px] rounded-lg">
-    <Image className="bg-gray-50 rounded-full h-32 w-32 ml-4 mb-8 mt-4" src={Decarbonize} alt="Consultation" />
-    <h1 className="font-bold text-lg mt-6">Decarbonize</h1>
-    <p className="text-center">Implement tailored plans to reduce emissions and achieve net zero goals</p>
-   </div>
-   </div>
+    <div className="min-h-screen bg-white pt-20">
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-6xl font-black text-gray-900 mb-12 text-center tracking-tight leading-tight">
+            Your Sustainability Journey
+          </h1>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Consult Now */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#c5c5c5] hover:shadow-2xl transition-all duration-300 hover:scale-105 text-center">
+              <div className="mb-6">
+                <Image 
+                  className="mx-auto rounded-full h-32 w-32 mb-6" 
+                  src={Consult} 
+                  alt="Consultation" 
+                />
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 font-serif">
+                  Consult Now
+                </h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-light">
+                Meet our experts to begin your sustainability and ESG compliance journey.
+              </p>
+            </div>
+
+            {/* Set Goals */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#c5c5c5] hover:shadow-2xl transition-all duration-300 hover:scale-105 text-center">
+              <div className="mb-6">
+                <Image 
+                  className="mx-auto rounded-full h-32 w-32 mb-6 bg-gray-50" 
+                  src={Goal} 
+                  alt="Set Goals" 
+                />
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 font-serif">
+                  Set Your Goals
+                </h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-light">
+                Our team guides you in understanding and achieving your business goals.
+              </p>
+            </div>
+
+            {/* Update Data */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#c5c5c5] hover:shadow-2xl transition-all duration-300 hover:scale-105 text-center">
+              <div className="mb-6">
+                <Image 
+                  className="mx-auto rounded-full h-32 w-32 mb-6" 
+                  src={Update} 
+                  alt="Update Data" 
+                />
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 font-serif">
+                  Update Data
+                </h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-light">
+                We interpret and organize data to ensure accuracy and transparency.
+              </p>
+            </div>
+
+            {/* Decarbonize */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#c5c5c5] hover:shadow-2xl transition-all duration-300 hover:scale-105 text-center">
+              <div className="mb-6">
+                <Image 
+                  className="mx-auto rounded-full h-32 w-32 mb-6 bg-gray-50" 
+                  src={Decarbonize} 
+                  alt="Decarbonize" 
+                />
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 font-serif">
+                  Decarbonize
+                </h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed font-light">
+                Implement tailored plans to reduce emissions and achieve net zero goals.
+              </p>
+            </div>
+          </div>
+
+          {/* Additional Information */}
+          <div className="mt-16 bg-white rounded-2xl p-12 shadow-xl border-2 border-[#c5c5c5]">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center font-serif border-b-4 border-[#c5c5c5] pb-4">
+              Building a Sustainable Future
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-gray-800 font-serif">Strategic Approach</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  Our comprehensive approach ensures that every step of your sustainability 
+                  journey is carefully planned and executed for maximum impact.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-gray-800 font-serif">Measurable Results</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  Track your progress with detailed analytics and reporting, ensuring 
+                  transparency and accountability throughout your decarbonization journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -21,11 +21,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-colors">
       <nav className="w-full px-0">
-        {/* DESKTOP LAYOUT: [Logo | Nav | Socials] */}
+        {/* DESKTOP LAYOUT: [Logo | Nav | Contact] */}
         <div className="hidden lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:h-20 lg:w-full">
 
           {/* FAR LEFT: Logo */}
-          <div className="flex items-center pl-4">
+          <div className="flex items-center pl-6">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.jpeg"
@@ -77,7 +77,7 @@ const Header = () => {
                 href="/about"
                 className="mx-3 px-4 py-2 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
               >
-                ABOUT US
+                ABOUT  US
               </Link>
             )}
             {pathname !== "/contact" && (
@@ -91,7 +91,7 @@ const Header = () => {
           </div>
 
           {/* FAR RIGHT: Social icons */}
-          <div className="flex items-center pr-4 space-x-2">
+          <div className="flex items-center pr-6 space-x-2">
             <Link href="https://www.youtube.com/@AIGEONAVIGATORS/videos" target="_blank" aria-label="YouTube" className="p-2 rounded-md transition hover:bg-red-50 hover:scale-110">
               <Youtube className="h-6 w-6 text-red-600 hover:text-red-700" />
             </Link>
@@ -149,7 +149,7 @@ const Header = () => {
                 {pathname !== "/" && (
                   <Link
                     href="/"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     HOME
@@ -158,7 +158,7 @@ const Header = () => {
                 {pathname !== "/services" && (
                   <Link
                     href="/services"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     SERVICES
@@ -167,7 +167,7 @@ const Header = () => {
                 {pathname !== "/future" && (
                   <Link
                     href="/future"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     FUTURE
@@ -176,7 +176,7 @@ const Header = () => {
                 {pathname !== "/calculate" && (
                   <Link
                     href="/calculate"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     CALCULATOR
@@ -185,7 +185,7 @@ const Header = () => {
                 {pathname !== "/about" && (
                   <Link
                     href="/about"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     ABOUT US
@@ -194,7 +194,7 @@ const Header = () => {
                 {pathname !== "/contact" && (
                   <Link
                     href="/contact"
-                    className="block px-4 py-3 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     CONTACT US
@@ -224,8 +224,8 @@ const Header = () => {
           )}
         </div>
 
-        {/* TABLET LAYOUT: [Logo | Nav] - Socials hidden on tablet */}
-        <div className="hidden md:grid md:grid-cols-[auto_1fr] md:items-center md:h-20 md:w-full lg:hidden">
+        {/* TABLET LAYOUT: [Logo | Nav | Socials] */}
+        <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:h-20 md:w-full lg:hidden">
           
           {/* FAR LEFT: Logo */}
           <div className="flex items-center pl-4">
@@ -280,7 +280,7 @@ const Header = () => {
                 href="/about"
                 className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
               >
-                ABOUT US
+                ABOUT Us
               </Link>
             )}
             {pathname !== "/contact" && (
@@ -288,9 +288,28 @@ const Header = () => {
                 href="/contact"
                 className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
               >
-                CONTACT US
+                CONTACT Us
               </Link>
             )}
+          </div>
+
+          {/* FAR RIGHT: Social icons (Tablet) */}
+          <div className="flex items-center pr-4 space-x-1">
+            <Link href="https://www.youtube.com/@AIGEONAVIGATORS/videos" target="_blank" aria-label="YouTube" className="p-1 rounded-md transition hover:bg-red-50 hover:scale-110">
+              <Youtube className="h-4 w-4 text-red-600 hover:text-red-700" />
+            </Link>
+            <Link href="https://x.com/AiGeoNavigators" target="_blank" aria-label="Twitter" className="p-1 rounded-md transition hover:bg-black/5 hover:scale-110">
+              <Twitter className="h-4 w-4 text-black hover:text-gray-800" />
+            </Link>
+            <Link href="https://pk.linkedin.com/company/geo-ai-navigators" target="_blank" aria-label="LinkedIn" className="p-1 rounded-md transition hover:bg-blue-50 hover:scale-110">
+              <Linkedin className="h-4 w-4 text-blue-700 hover:text-blue-800" />
+            </Link>
+            <Link href="https://www.instagram.com/aigeonavigators/?hl=en" target="_blank" aria-label="Instagram" className="p-1 rounded-md transition hover:bg-pink-50 hover:scale-110">
+              <Instagram className="h-4 w-4 text-pink-600 hover:text-pink-700" />
+            </Link>
+            <Link href="https://www.facebook.com/people/AI-Geo-Navigators/61569856932091/" target="_blank" aria-label="Facebook" className="p-1 rounded-md transition hover:bg-blue-50 hover:scale-110">
+              <Facebook className="h-4 w-4 text-blue-600 hover:text-blue-700" />
+            </Link>
           </div>
 
         </div>

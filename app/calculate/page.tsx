@@ -1,11 +1,15 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
-import type React from "react"
-
+import type React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 interface EmissionData {
   value: number;
@@ -38,7 +42,7 @@ function CarbonFootprintCalculator() {
     flightsShortHaul: "0",
     flightsMediumHaul: "0",
     flightsLongHaul: "0",
-    dietaryChoice: "Vegan", // Default value
+    dietaryChoice: "Vegan",
   });
   const [result, setResult] = useState<ResultData | null>(null);
   const [chartData, setChartData] = useState<ChartData | null>(null);
@@ -63,9 +67,7 @@ function CarbonFootprintCalculator() {
     try {
       const response = await fetch("api/calculate", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       if (!response.ok) {
@@ -74,14 +76,8 @@ function CarbonFootprintCalculator() {
       const data = await response.json();
       setResult(data);
 
-      // Update chart data after receiving new results
       setChartData({
-        labels: [
-          "Electricity",
-          "Transportation",
-          "Air Travel",
-          "Dietary Choice",
-        ],
+        labels: ["Electricity", "Transportation", "Air Travel", "Dietary Choice"],
         datasets: [
           {
             label: "CO2 Emissions (kgCO2e/year)",
@@ -109,92 +105,66 @@ function CarbonFootprintCalculator() {
       });
     } catch (error) {
       console.error("Error submitting form:", error);
-
     }
   };
 
-
-  const chartOptions = {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
+  const chartOptions = { scales: { y: { beginAtZero: true } } };
 
   return (
-    <div className="bg-white p-4">
-      {/* <div className="bg-gray-200 p-10 w-full max-w-screen-lg">
-        <h1 className="text-5xl font-bold mb-6 text-center text-white">
-          My Carbon Footprint
-        </h1>
-      </div> */}
+    <div className={`${poppins.className} mt-20 relative min-h-screen`}>
 
-      <div className="grid grid-cols-2 gap-2 bg-slate-100 border-2 border-white rounded-lg mt-16 ">
-        {/* Calculator */}
-        <div className=" text-black p-8 rounded-lg shadow-lg ">
-          <h1 className="text-3xl font-bold mb-6 text-center">
-            Carbon Footprint Calculator
-          </h1>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Input fields */}
-            <div className="flex flex-col">
-                <label className="mb-2">Electricity Usage (kWh/Month):</label>
-                <input
-                  type="number"
-                  name="electricityUsageKWh"
-                  value={formData.electricityUsageKWh}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="mb-2">Transportation Gasoline Usage (Gallons/Month):</label>
-                <input
-                  type="number"
-                  name="transportationUsageGallonsPerMonth"
-                  value={formData.transportationUsageGallonsPerMonth}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="mb-2">Short Flights:</label>
-                <input
-                  type="number"
-                  name="flightsShortHaul"
-                  value={formData.flightsShortHaul}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="mb-2">Medium Flights:</label>
-                <input
-                  type="number"
-                  name="flightsMediumHaul"
-                  value={formData.flightsMediumHaul}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="mb-2">Long Flights:</label>
-                <input
-                  type="number"
-                  name="flightsLongHaul"
-                  value={formData.flightsLongHaul}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
-                />
-              </div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')",
+        }}
+      />
+
+      {/* Black Transparent Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-70" />
+
+      {/* Content */}
+      <div className="relative z-10 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          {/* Calculator */}
+          <div className="p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-md border border-white/20 text-white">
+            <h1 className="text-3xl font-bold mb-6 text-center">
+              Carbon Footprint Calculator
+            </h1>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {[
+                {
+                  label: "Electricity Usage (kWh/Month):",
+                  name: "electricityUsageKWh",
+                },
+                {
+                  label: "Transportation Gasoline Usage (Gallons/Month):",
+                  name: "transportationUsageGallonsPerMonth",
+                },
+                { label: "Short Flights:", name: "flightsShortHaul" },
+                { label: "Medium Flights:", name: "flightsMediumHaul" },
+                { label: "Long Flights:", name: "flightsLongHaul" },
+              ].map((field) => (
+                <div key={field.name} className="flex flex-col">
+                  <label className="mb-2">{field.label}</label>
+                  <input
+                    type="number"
+                    name={field.name}
+                    value={(formData as any)[field.name]}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded-md p-2 text-black"
+                  />
+                </div>
+              ))}
               <div className="flex flex-col">
                 <label className="mb-2">Dietary Choice:</label>
                 <select
                   name="dietaryChoice"
                   value={formData.dietaryChoice}
                   onChange={handleChange}
-                  className="border border-gray-300 rounded-md p-2"
+                  className="border border-gray-300 rounded-md p-2 text-black"
                 >
                   <option value="Vegan">Vegan</option>
                   <option value="Vegetarian">Vegetarian</option>
@@ -202,60 +172,33 @@ function CarbonFootprintCalculator() {
                   <option value="MeatEater">Meat Eater</option>
                 </select>
               </div>
-              <br />
-              <div className="flex flex-col">
-                <button
-                  type="submit"
-                  className="bg-cyan-700 hover:bg-cyan-900 text-white px-4 py-2 rounded-md transition-colors duration-300"
-                >
-                  Calculate
-                </button>
-              </div>
-          </form>
-        </div>
-        {/* Results */}
-        <div className=" text-black p-8 rounded-lg shadow-lg ">
-          <h1 className="text-3xl font-bold mb-2">
-            Yearly Emissions Statistics
-          </h1>
-          <br />
-          {chartData && <Bar data={chartData} options={chartOptions} />}
-          {result && (
-            <div className="mt-8">
-              <div>
-                <p className="text-2xl font-bold">Air Travel: </p>
+              <button
+                type="submit"
+                className="w-full bg-cyan-600 hover:bg-cyan-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
 
-                <p className="text-xl">
-                  {result.totalAirTravelEmissions.value}{" "}
-                  {result.totalAirTravelEmissions.unit}
-                </p>
-                <br />
-                <p className="text-2xl font-bold">Electricity: </p>
-                <p className="text-xl">
-                  {result.yearlyElectricityEmissions.value}{" "}
-                  {result.yearlyElectricityEmissions.unit}
-                </p>
-                <br />
-                <p className="text-2xl font-bold">Transportation: </p>
-                <p className="text-xl">
-                  {result.yearlyTransportationEmissions.value}{" "}
-                  {result.yearlyTransportationEmissions.unit}
-                </p>
-                <br />
-                <p className="text-2xl font-bold">Dietary Choice: </p>
-                <p className="text-xl">
-                  {result.dietaryChoiceEmissions.value}{" "}
-                  {result.dietaryChoiceEmissions.unit}
-                </p>
-                <br />
-
-                <p className="text-xl font-bold">
-                  TOTAL : {result.totalYearlyEmissions.value}{" "}
-                  {result.totalYearlyEmissions.unit}
-                </p>
+          {/* Results */}
+          <div className="p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-md border border-white/20 text-white">
+            <h1 className="text-3xl font-bold mb-4">
+              Yearly Emissions Statistics
+            </h1>
+            {chartData && <Bar data={chartData} options={chartOptions} />}
+            {result && (
+              <div className="mt-8 space-y-4">
+                <p className="text-xl font-bold">Air Travel: {result.totalAirTravelEmissions.value} {result.totalAirTravelEmissions.unit}</p>
+                <p className="text-xl font-bold">Electricity: {result.yearlyElectricityEmissions.value} {result.yearlyElectricityEmissions.unit}</p>
+                <p className="text-xl font-bold">Transportation: {result.yearlyTransportationEmissions.value} {result.yearlyTransportationEmissions.unit}</p>
+                <p className="text-xl font-bold">Dietary Choice: {result.dietaryChoiceEmissions.value} {result.dietaryChoiceEmissions.unit}</p>
+                <p className="text-2xl font-bold mt-4">TOTAL: {result.totalYearlyEmissions.value} {result.totalYearlyEmissions.unit}</p>
               </div>
-            </div>
-          )}
+            )}
+            
+
+          </div>
         </div>
       </div>
     </div>
@@ -263,4 +206,3 @@ function CarbonFootprintCalculator() {
 }
 
 export default CarbonFootprintCalculator;
-

@@ -160,12 +160,12 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.25em] text-white/80 font-display font-semibold text-center sm:text-left"
+              className="text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.15em] sm:tracking-[0.25em] text-white/80 font-display font-semibold text-center sm:text-left"
             >
               MEASURE · REPORT · ACT
             </motion.p>
@@ -174,16 +174,16 @@ export default function Home() {
               initial={{ y: 24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.35, duration: 0.7 }}
-              className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-serif font-extrabold leading-tight text-white text-center sm:text-left"
+              className="mt-2 sm:mt-3 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-extrabold leading-tight text-white text-center sm:text-left"
             >
-              AI Geo Navigator
+              AI Geo Navigators
             </motion.h1>
 
             <motion.p
               initial={{ y: 24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="mt-3 sm:mt-4 md:mt-5 max-w-3xl text-white/90 text-sm sm:text-base md:text-lg font-sans text-center sm:text-left mx-auto sm:mx-0 whitespace-nowrap"
+              className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 max-w-2xl sm:max-w-3xl text-white/90 text-sm sm:text-base md:text-lg lg:text-xl font-sans text-center sm:text-left mx-auto sm:mx-0 leading-relaxed"
             >
               Empowering organizations to meet climate goals through smart, automated carbon intelligence
             </motion.p>

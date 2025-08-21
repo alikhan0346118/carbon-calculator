@@ -48,6 +48,14 @@ const Header = () => {
                 HOME
               </Link>
             )}
+            {pathname !== "/calculate" && (
+              <Link
+                href="/calculate"
+                className="mx-3 px-4 py-2 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+              >
+                CALCULATOR
+              </Link>
+            )}
             {pathname !== "/services" && (
               <Link
                 href="/services"
@@ -62,14 +70,6 @@ const Header = () => {
                 className="mx-3 px-4 py-2 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
               >
                 FUTURE
-              </Link>
-            )}
-            {pathname !== "/calculate" && (
-              <Link
-                href="/calculate"
-                className="mx-3 px-4 py-2 font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                CALCULATOR
               </Link>
             )}
             {pathname !== "/about" && (
@@ -155,6 +155,15 @@ const Header = () => {
                     HOME
                   </Link>
                 )}
+                {pathname !== "/calculate" && (
+                  <Link
+                    href="/calculate"
+                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    onClick={closeMenu}
+                  >
+                    CALCULATOR
+                  </Link>
+                )}
                 {pathname !== "/services" && (
                   <Link
                     href="/services"
@@ -171,15 +180,6 @@ const Header = () => {
                     onClick={closeMenu}
                   >
                     FUTURE
-                  </Link>
-                )}
-                {pathname !== "/calculate" && (
-                  <Link
-                    href="/calculate"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-                    onClick={closeMenu}
-                  >
-                    CALCULATOR
                   </Link>
                 )}
                 {pathname !== "/about" && (
@@ -251,6 +251,14 @@ const Header = () => {
                 HOME
               </Link>
             )}
+            {pathname !== "/calculate" && (
+              <Link
+                href="/calculate"
+                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+              >
+                CALCULATOR
+              </Link>
+            )}
             {pathname !== "/services" && (
               <Link
                 href="/services"
@@ -265,14 +273,6 @@ const Header = () => {
                 className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
               >
                 FUTURE
-              </Link>
-            )}
-            {pathname !== "/calculate" && (
-              <Link
-                href="/calculate"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                CALCULATOR
               </Link>
             )}
             {pathname !== "/about" && (

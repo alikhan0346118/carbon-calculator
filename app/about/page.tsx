@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white pt-16 sm:pt-20">
-      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
+    <div className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-8 md:py-12">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 xl:mb-12 text-center tracking-tight leading-tight border-b-2 sm:border-b-0 border-gray-300 pb-3 sm:pb-0">
             About AI Geo Navigators

@@ -111,10 +111,10 @@ const Header = () => {
 
         </div>
 
-        {/* MOBILE LAYOUT */}
+        {/* MOBILE & MEDIUM LAYOUT */}
         <div className="lg:hidden">
-          {/* Mobile Header Bar */}
-          <div className="flex items-center justify-between h-16 px-4">
+          {/* Header Bar */}
+          <div className="flex items-center justify-between h-16 md:h-20 px-4 md:px-6">
             {/* Logo */}
             <Link href="/" className="flex items-center" onClick={closeMenu}>
               <Image
@@ -122,7 +122,7 @@ const Header = () => {
                 alt="AI Geo Navigators"
                 width={120}
                 height={40}
-                className="object-contain"
+                className="object-contain md:w-[140px] md:h-[45px]"
                 priority
               />
             </Link>
@@ -141,15 +141,15 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Overlay */}
+          {/* Menu Overlay */}
           {isMenuOpen && (
-            <div className="absolute top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+            <div className="absolute top-16 md:top-20 left-0 right-0 bg-white shadow-lg border-t border-gray-200">
               {/* Navigation Links */}
-              <div className="px-4 py-2 space-y-1">
+              <div className="px-4 md:px-6 py-2 space-y-1">
                 {pathname !== "/" && (
                   <Link
                     href="/"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     HOME
@@ -158,7 +158,7 @@ const Header = () => {
                 {pathname !== "/calculate" && (
                   <Link
                     href="/calculate"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     CALCULATOR
@@ -167,7 +167,7 @@ const Header = () => {
                 {pathname !== "/services" && (
                   <Link
                     href="/services"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     SERVICES
@@ -176,7 +176,7 @@ const Header = () => {
                 {pathname !== "/future" && (
                   <Link
                     href="/future"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     FUTURE
@@ -185,7 +185,7 @@ const Header = () => {
                 {pathname !== "/about" && (
                   <Link
                     href="/about"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     ABOUT US
@@ -194,7 +194,7 @@ const Header = () => {
                 {pathname !== "/contact" && (
                   <Link
                     href="/contact"
-                    className="block px-4 py-3 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
+                    className="block px-4 py-3 text-sm md:text-base font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
                     onClick={closeMenu}
                   >
                     CONTACT US
@@ -203,115 +203,25 @@ const Header = () => {
               </div>
 
               {/* Social Icons */}
-              <div className="flex justify-center items-center px-4 py-4 border-t border-gray-200 space-x-3">
+              <div className="flex justify-center items-center px-4 md:px-6 py-4 border-t border-gray-200 space-x-3">
                 <Link href="https://www.youtube.com/@AIGEONAVIGATORS/videos" target="_blank" aria-label="YouTube" className="p-2 rounded-md transition hover:bg-red-50 hover:scale-110">
-                  <Youtube className="h-6 w-6 text-red-600 hover:text-red-700" />
+                  <Youtube className="h-5 w-5 md:h-6 md:w-6 text-red-600 hover:text-red-700" />
                 </Link>
                 <Link href="https://x.com/AiGeoNavigators" target="_blank" aria-label="Twitter" className="p-2 rounded-md transition hover:bg-black/5 hover:scale-110">
-                  <Twitter className="h-6 w-6 text-black hover:text-gray-800" />
+                  <Twitter className="h-5 w-5 md:h-6 md:w-6 text-black hover:text-gray-800" />
                 </Link>
                 <Link href="https://pk.linkedin.com/company/geo-ai-navigators" target="_blank" aria-label="LinkedIn" className="p-2 rounded-md transition hover:bg-blue-50 hover:scale-110">
-                  <Linkedin className="h-6 w-6 text-blue-700 hover:text-blue-800" />
+                  <Linkedin className="h-5 w-5 md:h-6 md:w-6 text-blue-700 hover:text-blue-800" />
                 </Link>
                 <Link href="https://www.instagram.com/aigeonavigators/?hl=en" target="_blank" aria-label="Instagram" className="p-2 rounded-md transition hover:bg-pink-50 hover:scale-110">
-                  <Instagram className="h-6 w-6 text-pink-600 hover:text-pink-700" />
+                  <Instagram className="h-5 w-5 md:h-6 md:w-6 text-pink-600 hover:text-pink-700" />
                 </Link>
                 <Link href="https://www.facebook.com/people/AI-Geo-Navigators/61569856932091/" target="_blank" aria-label="Facebook" className="p-2 rounded-md transition hover:bg-blue-50 hover:scale-110">
-                  <Facebook className="h-6 w-6 text-blue-600 hover:text-blue-700" />
+                  <Facebook className="h-5 w-5 md:h-6 md:w-6 text-blue-600 hover:text-blue-700" />
                 </Link>
               </div>
             </div>
           )}
-        </div>
-
-        {/* TABLET LAYOUT: [Logo | Nav | Socials] */}
-        <div className="hidden md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:h-20 md:w-full lg:hidden">
-          
-          {/* FAR LEFT: Logo */}
-          <div className="flex items-center pl-4">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.jpeg"
-                alt="AI Geo Navigators"
-                width={130}
-                height={45}
-                className="object-contain"
-                priority
-              />
-            </Link>
-          </div>
-
-          {/* CENTER: Nav links */}
-          <div className="flex justify-center">
-            {pathname !== "/" && (
-              <Link
-                href="/"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                HOME
-              </Link>
-            )}
-            {pathname !== "/calculate" && (
-              <Link
-                href="/calculate"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                CALCULATOR
-              </Link>
-            )}
-            {pathname !== "/services" && (
-              <Link
-                href="/services"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                SERVICES
-              </Link>
-            )}
-            {pathname !== "/future" && (
-              <Link
-                href="/future"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                FUTURE
-              </Link>
-            )}
-            {pathname !== "/about" && (
-              <Link
-                href="/about"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                ABOUT Us
-              </Link>
-            )}
-            {pathname !== "/contact" && (
-              <Link
-                href="/contact"
-                className="mx-2 px-3 py-2 text-sm font-semibold rounded-md transition text-gray-700 hover:text-cyan-600 hover:bg-gray-100"
-              >
-                CONTACT Us
-              </Link>
-            )}
-          </div>
-
-          {/* FAR RIGHT: Social icons (Tablet) */}
-          <div className="flex items-center pr-4 space-x-1">
-            <Link href="https://www.youtube.com/@AIGEONAVIGATORS/videos" target="_blank" aria-label="YouTube" className="p-1 rounded-md transition hover:bg-red-50 hover:scale-110">
-              <Youtube className="h-4 w-4 text-red-600 hover:text-red-700" />
-            </Link>
-            <Link href="https://x.com/AiGeoNavigators" target="_blank" aria-label="Twitter" className="p-1 rounded-md transition hover:bg-black/5 hover:scale-110">
-              <Twitter className="h-4 w-4 text-black hover:text-gray-800" />
-            </Link>
-            <Link href="https://pk.linkedin.com/company/geo-ai-navigators" target="_blank" aria-label="LinkedIn" className="p-1 rounded-md transition hover:bg-blue-50 hover:scale-110">
-              <Linkedin className="h-4 w-4 text-blue-700 hover:text-blue-800" />
-            </Link>
-            <Link href="https://www.instagram.com/aigeonavigators/?hl=en" target="_blank" aria-label="Instagram" className="p-1 rounded-md transition hover:bg-pink-50 hover:scale-110">
-              <Instagram className="h-4 w-4 text-pink-600 hover:text-pink-700" />
-            </Link>
-            <Link href="https://www.facebook.com/people/AI-Geo-Navigators/61569856932091/" target="_blank" aria-label="Facebook" className="p-1 rounded-md transition hover:bg-blue-50 hover:scale-110">
-              <Facebook className="h-4 w-4 text-blue-600 hover:text-blue-700" />
-            </Link>
-          </div>
-
         </div>
 
       </nav>

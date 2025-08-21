@@ -105,7 +105,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-16 sm:pt-20">
+    <div className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
       {/* Hero Section */}
       <motion.div 
         className="relative overflow-hidden"
@@ -113,7 +113,7 @@ export default function ContactPage() {
         animate="visible"
         variants={containerVariants}
       >
-        <div className="relative container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+        <div className="relative container mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-16 md:py-20">
           <motion.div 
             className="text-center max-w-3xl mx-auto"
             variants={itemVariants}
@@ -125,7 +125,7 @@ export default function ContactPage() {
         </div>
       </motion.div>
 
-      <div className="container mx-auto px-3 sm:px-4 pb-8 sm:pb-16">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 pb-8 sm:pb-16 md:pb-20">
         <motion.div 
           className="max-w-7xl mx-auto"
           initial="hidden"

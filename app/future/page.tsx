@@ -1,11 +1,37 @@
-import Image from "next/image"
-import Consult from "../../public/consul.png"
-import Goal from "../../public/set-goals.png"
-import Update from "../../public/update.png"
-import Decarbonize from "../../public/netzero-logo-big-tree.png"
+"use client";
+
+import Image from "next/image";
+import Consult from "../../public/consul.png";
+import Goal from "../../public/set-goals.png";
+import Update from "../../public/update.png";
+import Decarbonize from "../../public/netzero-logo-big-tree.png";
 
 const Future = () => {
+  const steps = [
+    {
+      img: Consult,
+      title: "Consult Now",
+      desc: "Meet our experts to begin sustainability and ESG compliance journey.",
+    },
+    {
+      img: Goal,
+      title: "Set your Goals",
+      desc: "Our team guides in understanding and achieving your business roles.",
+    },
+    {
+      img: Update,
+      title: "Update Data",
+      desc: "We interpret and organize data to ensure accuracy and transparency.",
+    },
+    {
+      img: Decarbonize,
+      title: "Decarbonize",
+      desc: "Implement tailored plans to reduce emissions and achieve net zero goals.",
+    },
+  ];
+
   return (
+
     <div className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-8 md:py-12">
         <div className="max-w-6xl mx-auto">
@@ -106,9 +132,10 @@ const Future = () => {
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Future
+export default Future;

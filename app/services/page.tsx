@@ -1,3 +1,4 @@
+
 import type React from "react"
 import scope3 from "../../public/animation-03.gif"
 import scope2 from "../../public/animation_02.gif"
@@ -92,10 +93,10 @@ const Services: React.FC = () => {
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Services
-
+export default Services;

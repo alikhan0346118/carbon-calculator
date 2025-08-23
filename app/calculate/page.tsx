@@ -1,12 +1,19 @@
-"use client"
+"use client";
+
 
 import { useState, useEffect, useRef } from "react";
 import type React from "react"
 import { jsPDF } from "jspdf";
 
+
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 interface EmissionData {
   value: number;
@@ -45,6 +52,7 @@ function CarbonFootprintCalculator() {
     flightsMediumHaul: "0",
     flightsLongHaul: "0",
     dietaryChoice: "Vegan",
+
     personalVehicleMiles: "",
     
     // Organization fields
@@ -55,6 +63,7 @@ function CarbonFootprintCalculator() {
     orgAirTravelLong: "0",
     orgWasteTons: "",
     orgHeatingCoolingKWh: "",
+
   });
   const [result, setResult] = useState<ResultData | null>(null);
   const [chartData, setChartData] = useState<ChartData | null>(null);
@@ -389,16 +398,19 @@ function CarbonFootprintCalculator() {
     try {
       const response = await fetch("api/calculate", {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ ...formData, calculatorType }),
+
       });
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
       setResult(data);
+
 
       // Update chart data after receiving new results
       let labels: string[] = [];
@@ -425,6 +437,7 @@ function CarbonFootprintCalculator() {
 
       setChartData({
         labels,
+
         datasets: [
           {
             label: "CO2 EMISSIONS (KGCO2E/YEAR)",
@@ -451,6 +464,7 @@ function CarbonFootprintCalculator() {
       console.error("Error submitting form:", error);
     }
   };
+
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -524,6 +538,7 @@ function CarbonFootprintCalculator() {
       }
     }
   };
+
 
   const renderCalculatorTypeSelector = () => (
     <div className="mb-4 sm:mb-6 lg:mb-8">
@@ -732,6 +747,7 @@ function CarbonFootprintCalculator() {
   );
 
   return (
+
     <div className="min-h-screen bg-white pt-16 sm:pt-20 md:pt-24">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
@@ -822,6 +838,7 @@ function CarbonFootprintCalculator() {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -830,4 +847,3 @@ function CarbonFootprintCalculator() {
 }
 
 export default CarbonFootprintCalculator;
-

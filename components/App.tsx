@@ -55,6 +55,7 @@ function HowItWorks({
   ]
 }: HowItWorksProps) {
   return (
+
     <section
       id={id}
       className="relative w-full overflow-hidden bg-white py-14 sm:py-18 md:py-20"
@@ -65,6 +66,7 @@ function HowItWorks({
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8 relative">
         {/* Header */}
+
         <motion.div
           variants={container}
           initial="hidden"
@@ -91,6 +93,7 @@ function HowItWorks({
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           className="mt-10 grid gap-8 sm:gap-10 md:gap-12 lg:mt-12 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto"
+
         >
           {steps.map((s, idx) => (
             <motion.li

@@ -1,4 +1,20 @@
 import { NextResponse } from "next/server"
+type Unit = "kgCO2e/year"
+type EmissionEntry = {
+  value: number
+  unit: Unit
+}
+
+type EmissionsResult = {
+  yearlyElectricityEmissions?: EmissionEntry
+  yearlyTransportationEmissions?: EmissionEntry
+  totalAirTravelEmissions?: EmissionEntry
+  dietaryChoiceEmissions?: EmissionEntry
+  personalVehicleEmissions?: EmissionEntry
+  wasteEmissions?: EmissionEntry
+  heatingCoolingEmissions?: EmissionEntry
+  totalYearlyEmissions?: EmissionEntry
+}
 
 export async function POST(request: Request) {
   try {
@@ -14,7 +30,7 @@ export async function POST(request: Request) {
 
     const dietaryChoice: keyof typeof dietEmissions = data.dietaryChoice as keyof typeof dietEmissions
 
-    let result: any = {}
+    let result: EmissionsResult = {}
 
     if (calculatorType === "Individual" || calculatorType === "Employee") {
       // Individual/Employee calculations
@@ -48,7 +64,7 @@ export async function POST(request: Request) {
           unit: "kgCO2e/year",
         }
         // Add to transportation emissions
-        result.yearlyTransportationEmissions.value += personalVehicleEmissions
+        result.yearlyTransportationEmissions!.value += personalVehicleEmissions
       }
 
     } else if (calculatorType === "Organization") {
@@ -86,7 +102,7 @@ export async function POST(request: Request) {
 
     // Calculate total yearly emissions
     const totalYearlyEmissions = {
-      value: Object.values(result).reduce((total: number, emission: any) => {
+      value: Object.values(result).reduce((total: number, emission: EmissionEntry | undefined) => {
         if (emission && typeof emission.value === 'number') {
           return total + emission.value
         }

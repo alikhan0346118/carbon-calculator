@@ -145,7 +145,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-800">Send us a Message</h2>
-                  <p className="text-sm sm:text-base text-gray-600 font-sans">We'd love to hear from you</p>
+                  <p className="text-sm sm:text-base text-[#0aa3be] font-sans">We'd love to hear from you</p>
                 </div>
               </div>
               
@@ -282,7 +282,7 @@ export default function ContactPage() {
                   className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-display font-semibold text-white transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base ${
                     formStatus === 'submitting' 
                       ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-gradient-to-r from-[#c5c5c5] to-gray-600 hover:from-gray-600 hover:to-[#c5c5c5] hover:shadow-lg border-2 border-[#c5c5c5]'
+                      : 'bg-[#0aa3be] hover:bg-[#0aa3be]/90 hover:shadow-lg border-2 border-[#0aa3be]'
                   }`}
                   whileHover={formStatus !== 'submitting' ? { scale: 1.02 } : {}}
                   whileTap={formStatus !== 'submitting' ? { scale: 0.98 } : {}}
@@ -326,7 +326,7 @@ export default function ContactPage() {
               {/* About Section */}
               <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 lg:p-8 border-2 border-[#c5c5c5]">
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif font-bold text-gray-800 mb-3 sm:mb-4">Why Choose AI Geo Navigators?</h3>
-                <div className="space-y-3 sm:space-y-4 text-gray-600">
+                <div className="space-y-3 sm:space-y-4 text-[#0aa3be]">
                   <p className="leading-relaxed font-sans text-sm sm:text-base">
                     We specialize in cutting-edge carbon emissions tracking and environmental 
                     impact assessment using advanced AI and geospatial technologies.
@@ -369,7 +369,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-display font-semibold text-gray-800 text-sm sm:text-base">YouTube</p>
-                      <p className="text-xs sm:text-sm font-sans text-gray-600">Watch our latest videos</p>
+                      <p className="text-xs sm:text-sm font-sans text-[#0aa3be]">Watch our latest videos</p>
                     </div>
                   </a>
 
@@ -386,7 +386,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-display font-semibold text-gray-800 text-sm sm:text-base">Twitter</p>
-                      <p className="text-xs sm:text-sm font-sans text-gray-600">Follow our updates</p>
+                      <p className="text-xs sm:text-sm font-sans text-[#0aa3be]">Follow our updates</p>
                     </div>
                   </a>
 
@@ -403,7 +403,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-display font-semibold text-gray-800 text-sm sm:text-base">LinkedIn</p>
-                      <p className="text-xs sm:text-sm font-sans text-gray-600">Connect professionally</p>
+                      <p className="text-xs sm:text-sm font-sans text-[#0aa3be]">Connect professionally</p>
                     </div>
                   </a>
                 </div>

@@ -167,7 +167,7 @@ function CarbonFootprintCalculator() {
     // Input data with better formatting
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    doc.setTextColor(55, 65, 81); // gray-700
+    doc.setTextColor(10, 163, 190); // #0aa3be
     
     let inputData: string[] = [];
     
@@ -210,7 +210,7 @@ function CarbonFootprintCalculator() {
 
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    doc.setTextColor(55, 65, 81); // gray-700
+    doc.setTextColor(10, 163, 190); // #0aa3be
     doc.text('This comprehensive carbon footprint analysis provides detailed insights into', 25, 145);
     doc.text('your emissions across various categories. The report includes:', 25, 152);
     doc.text('• Detailed breakdown of emissions by category', 30, 162);
@@ -270,22 +270,22 @@ function CarbonFootprintCalculator() {
         {
           label: '• Electricity Emissions',
           value: `${result.yearlyElectricityEmissions.value} ${result.yearlyElectricityEmissions.unit}`,
-          color: [55, 65, 81] // gray-700 - darker for better readability
+          color: [10, 163, 190] // #0aa3be - darker for better readability
         },
         {
           label: '• Transportation Emissions',
           value: `${result.yearlyTransportationEmissions.value} ${result.yearlyTransportationEmissions.unit}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         },
         {
           label: '• Air Travel Emissions',
           value: `${result.totalAirTravelEmissions.value} ${result.totalAirTravelEmissions.unit}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         },
         {
           label: '• Dietary Choice Emissions',
           value: `${result.dietaryChoiceEmissions.value} ${result.dietaryChoiceEmissions.unit}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         }
       ];
     } else if (calculatorType === "Organization") {
@@ -293,27 +293,27 @@ function CarbonFootprintCalculator() {
         {
           label: '• Electricity Emissions',
           value: `${result.yearlyElectricityEmissions.value} ${result.yearlyElectricityEmissions.unit}`,
-          color: [55, 65, 81] // gray-700 - darker for better readability
+          color: [10, 163, 190] // #0aa3be - darker for better readability
         },
         {
           label: '• Fleet Transportation Emissions',
           value: `${result.yearlyTransportationEmissions.value} ${result.yearlyTransportationEmissions.unit}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         },
         {
           label: '• Air Travel Emissions',
           value: `${result.totalAirTravelEmissions.value} ${result.totalAirTravelEmissions.unit}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
                 },
         {
           label: '• Waste Emissions',
           value: `${result.wasteEmissions?.value || 0} ${result.wasteEmissions?.unit || 'kgCO2e/year'}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         },
         {
           label: '• Heating/Cooling Emissions',
           value: `${result.heatingCoolingEmissions?.value || 0} ${result.heatingCoolingEmissions?.unit || 'kgCO2e/year'}`,
-          color: [55, 65, 81] // gray-700
+          color: [10, 163, 190] // #0aa3be
         }
       ];
     }
@@ -358,7 +358,7 @@ function CarbonFootprintCalculator() {
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.setTextColor(55, 65, 81); // gray-700
+    doc.setTextColor(10, 163, 190); // #0aa3be
     doc.text('• Consider energy-efficient appliances and renewable energy sources', 25, 60);
     doc.text('• Implement sustainable transportation options', 25, 68);
     doc.text('• Reduce air travel and consider virtual meetings', 25, 76);
@@ -378,7 +378,7 @@ function CarbonFootprintCalculator() {
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.setTextColor(55, 65, 81); // gray-700
+    doc.setTextColor(10, 163, 190); // #0aa3be
     doc.text('• Your emissions are equivalent to driving approximately', 25, 125);
     doc.text(`  ${Math.round(result.totalYearlyEmissions.value / 0.404)} miles per year`, 25, 133);
     doc.text('• This represents the carbon footprint of', 25, 145);
@@ -447,14 +447,14 @@ function CarbonFootprintCalculator() {
               "rgba(156, 163, 175, 0.6)",
               "rgba(107, 114, 128, 0.6)",
               "rgba(75, 85, 99, 0.6)",
-              "rgba(55, 65, 81, 0.6)",
+              "rgba(10, 163, 190, 0.6)",
             ],
             borderColor: [
               "rgba(197, 197, 197, 1)",
               "rgba(156, 163, 175, 1)",
               "rgba(107, 114, 128, 1)",
               "rgba(75, 85, 99, 1)",
-              "rgba(55, 65, 81, 1)",
+              "rgba(10, 163, 190, 1)",
             ],
             borderWidth: 2,
           },
@@ -552,8 +552,8 @@ function CarbonFootprintCalculator() {
             onClick={() => handleCalculatorTypeChange(type)}
             className={`px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 border-2 text-sm sm:text-base ${
               calculatorType === type
-                ? "bg-gradient-to-r from-[#c5c5c5] to-gray-600 text-white border-[#c5c5c5]"
-                : "bg-white text-gray-700 border-[#c5c5c5] hover:border-gray-600"
+                ? "bg-[#0aa3be] text-white border-[#0aa3be]"
+                : "bg-white text-gray-700 border-[#c5c5c5] hover:border-[#0aa3be]"
             }`}
           >
             {type}
@@ -572,7 +572,7 @@ function CarbonFootprintCalculator() {
           name="electricityUsageKWh"
           value={formData.electricityUsageKWh}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter monthly electricity usage"
         />
       </div>
@@ -584,7 +584,7 @@ function CarbonFootprintCalculator() {
           name="transportationUsageGallonsPerMonth"
           value={formData.transportationUsageGallonsPerMonth}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter monthly gasoline usage"
         />
       </div>
@@ -596,7 +596,7 @@ function CarbonFootprintCalculator() {
           name="personalVehicleMiles"
           value={formData.personalVehicleMiles}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter annual vehicle miles"
         />
       </div>
@@ -609,7 +609,7 @@ function CarbonFootprintCalculator() {
             name="flightsShortHaul"
             value={formData.flightsShortHaul}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -621,7 +621,7 @@ function CarbonFootprintCalculator() {
             name="flightsMediumHaul"
             value={formData.flightsMediumHaul}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -633,7 +633,7 @@ function CarbonFootprintCalculator() {
             name="flightsLongHaul"
             value={formData.flightsLongHaul}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -645,7 +645,7 @@ function CarbonFootprintCalculator() {
           name="dietaryChoice"
           value={formData.dietaryChoice}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
         >
           <option value="Vegan">Vegan</option>
           <option value="Vegetarian">Vegetarian</option>
@@ -665,7 +665,7 @@ function CarbonFootprintCalculator() {
           name="orgElectricityUsageKWh"
           value={formData.orgElectricityUsageKWh}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter monthly electricity usage"
         />
       </div>
@@ -677,7 +677,7 @@ function CarbonFootprintCalculator() {
           name="orgFleetMiles"
           value={formData.orgFleetMiles}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter annual fleet miles"
         />
       </div>
@@ -690,7 +690,7 @@ function CarbonFootprintCalculator() {
             name="orgAirTravelShort"
             value={formData.orgAirTravelShort}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -702,7 +702,7 @@ function CarbonFootprintCalculator() {
             name="orgAirTravelMedium"
             value={formData.orgAirTravelMedium}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -714,7 +714,7 @@ function CarbonFootprintCalculator() {
             name="orgAirTravelLong"
             value={formData.orgAirTravelLong}
             onChange={handleChange}
-            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+            className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
             placeholder="0"
           />
         </div>
@@ -727,7 +727,7 @@ function CarbonFootprintCalculator() {
           name="orgWasteTons"
           value={formData.orgWasteTons}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter annual waste generation"
         />
       </div>
@@ -739,7 +739,7 @@ function CarbonFootprintCalculator() {
           name="orgHeatingCoolingKWh"
           value={formData.orgHeatingCoolingKWh}
           onChange={handleChange}
-          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-gray-600 transition-colors duration-300"
+          className="border-2 border-[#c5c5c5] rounded-lg p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:border-[#0aa3be] transition-colors duration-300"
           placeholder="Enter annual heating/cooling usage"
         />
       </div>
@@ -770,7 +770,7 @@ function CarbonFootprintCalculator() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#c5c5c5] to-gray-600 hover:from-gray-600 hover:to-[#c5c5c5] text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 hover:shadow-lg border-2 border-[#c5c5c5]"
+                  className="w-full bg-[#0aa3be] hover:bg-[#0aa3be]/90 text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4 rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 hover:shadow-lg border-2 border-[#0aa3be]"
                 >
                   Calculate {calculatorType} Carbon Footprint
                 </button>
@@ -795,7 +795,7 @@ function CarbonFootprintCalculator() {
                   <div className="text-center">
                     <button
                       onClick={handleGeneratePDF}
-                      className="bg-gradient-to-r from-[#c5c5c5] to-gray-600 hover:from-gray-600 hover:to-[#c5c5c5] text-white px-3 sm:px-4 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 hover:shadow-lg border-2 border-[#c5c5c5] flex items-center justify-center mx-auto space-x-2"
+                      className="bg-[#0aa3be] hover:bg-[#0aa3be]/90 text-white px-3 sm:px-4 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 hover:shadow-lg border-2 border-[#0aa3be] flex items-center justify-center mx-auto space-x-2"
                     >
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -808,7 +808,7 @@ function CarbonFootprintCalculator() {
               
               {!result && (
                 <div className="text-center py-6 sm:py-8 lg:py-12">
-                  <p className="text-gray-600 text-sm sm:text-base lg:text-lg font-light">
+                  <p className="text-black sm:text-black md:text-black lg:text-[#0aa3be] text-sm sm:text-base lg:text-lg font-light">
                     Enter your {calculatorType.toLowerCase()} data and click calculate to see your carbon footprint results.
                   </p>
                 </div>
